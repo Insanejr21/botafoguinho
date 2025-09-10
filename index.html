@@ -1,293 +1,331 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolinha Botafoguinho - O Futuro Glorioso Começa Aqui</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolinha Botafoguinho - O Futuro Glorioso Começa Aqui</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --cor-preto: #101010;
+      --cor-branco: #FFFFFF;
+      --cor-cinza-claro: #f1f1f1;
+      --cor-texto: #cccccc;
+      --font-titulo: 'Montserrat', sans-serif;
+      --font-texto: 'Roboto', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-texto);
+      margin: 0;
+      background-color: var(--cor-preto);
+      color: var(--cor-texto);
+      overflow-x: hidden;
+    }
+
+    header.hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://files.catbox.moe/rnbqib.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--cor-branco);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 50vh;
+      padding: 40px 20px 20px 20px;
+      box-sizing: border-box;
+    }
+
+    header.hero .logo {
+      max-width: 120px;
+      margin-bottom: 10px;
+      margin-top: 10px; 
+    }
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    header.hero .estrela-solitaria {
+      font-size: 3rem;
+      color: var(--cor-branco);
+      text-shadow: 0 0 15px white, 0 0 25px white;
+      animation: pulsa-estrela 2s infinite ease-in-out;
+      margin-bottom: 10px; 
+    }
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    @keyframes pulsa-estrela {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
 
-    <style>
-        :root {
-            --cor-preto: #101010;
-            --cor-branco: #FFFFFF;
-            --cor-cinza-claro: #f1f1f1;
-            --cor-texto: #cccccc;
-            --font-titulo: 'Montserrat', sans-serif;
-            --font-texto: 'Roboto', sans-serif;
-        }
+    header.hero h1 {
+      font-family: var(--font-titulo);
+      font-weight: 900;
+      font-size: clamp(2.5em, 6vw, 4.5em);
+      margin: 0; 
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-        body {
-            font-family: var(--font-texto);
-            margin: 0;
-            background-color: var(--cor-preto);
-            color: var(--cor-texto);
-            overflow-x: hidden;
-        }
+    header.hero p {
+      font-size: clamp(1em, 2.5vw, 1.3em);
+      color: var(--cor-cinza-claro);
+      max-width: 800px;
+      margin: 5px auto 0; 
+      font-weight: 400;
+    }
 
-        header.hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://files.catbox.moe/rnbqib.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--cor-branco);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 50vh;
-            padding: 40px 20px 20px 20px;
-            box-sizing: border-box;
-        }
+    main {
+      max-width: 1100px;
+      margin: -30px auto 0; 
+      padding: 60px 20px;
+      background-color: var(--cor-preto); 
+      position: relative;
+      z-index: 5; 
+    }
 
-        header.hero .logo {
-            max-width: 120px;
-            margin-bottom: 10px;
-            margin-top: 10px; 
-        }
-        
-        header.hero .estrela-solitaria {
-            font-size: 3rem;
-            color: var(--cor-branco);
-            text-shadow: 0 0 15px white, 0 0 25px white;
-            animation: pulsa-estrela 2s infinite ease-in-out;
-            margin-bottom: 10px; 
-        }
+    .secao {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(30px, 5vw, 60px);
+      margin-bottom: 100px;
+    }
 
-        @keyframes pulsa-estrela {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
+    .secao:nth-child(even) .secao-imagem {
+      order: -1;
+    }
+    
+    .secao-imagem {
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    
+    .secao-imagem img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
 
-        header.hero h1 {
-            font-family: var(--font-titulo);
-            font-weight: 900;
-            font-size: clamp(2.5em, 6vw, 4.5em);
-            margin: 0; 
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+    .secao-imagem:hover img {
+      transform: scale(1.05);
+    }
+    
+    .secao-texto h2 {
+      font-family: var(--font-titulo);
+      font-weight: 700;
+      color: var(--cor-branco);
+      font-size: clamp(1.8em, 5vw, 2.5em);
+      margin: 0 0 20px 0;
+      border-left: 4px solid var(--cor-branco);
+      padding-left: 15px;
+    }
 
-        header.hero p {
-            font-size: clamp(1em, 2.5vw, 1.3em);
-            color: var(--cor-cinza-claro);
-            max-width: 800px;
-            margin: 5px auto 0; 
-            font-weight: 400;
-        }
+    .secao-texto p {
+      line-height: 1.8;
+      font-size: clamp(1em, 2vw, 1.1em);
+    }
+    
+    .secao-contato {
+      background: #1a1a1a;
+      padding: clamp(30px, 5vw, 50px);
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    .secao-contato h2 {
+      color: var(--cor-branco);
+      margin-top: 0;
+      font-family: var(--font-titulo);
+      font-size: clamp(1.6em, 4vw, 2.2em);
+    }
+    
+    .secao-contato p {
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
 
-        main {
-            max-width: 1100px;
-            margin: -30px auto 0; 
-            padding: 60px 20px;
-            background-color: var(--cor-preto); /* Garante que o fundo do main seja preto se subir muito */
-            position: relative;
-            z-index: 5; /* Garante que o main fique por cima do background do header */
-        }
+    .secao-contato strong {
+      color: var(--cor-cinza-claro);
+    }
 
-        .secao {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: clamp(30px, 5vw, 60px);
-            margin-bottom: 100px;
-        }
+    .cta a {
+      background: var(--cor-branco);
+      color: #000;
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: var(--font-titulo);
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+      font-size: 1em;
+    }
 
-        .secao:nth-child(even) .secao-imagem {
-            order: -1;
-        }
-        
-        .secao-imagem {
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            overflow: hidden;
-            aspect-ratio: 4 / 3;
-        }
-        
-        .secao-imagem img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
+    .cta a:hover {
+      background: #e0e0e0;
+      color: var(--cor-preto);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+    }
 
-        .secao-imagem:hover img {
-            transform: scale(1.05);
-        }
-        
-        .secao-texto h2 {
-            font-family: var(--font-titulo);
-            font-weight: 700;
-            color: var(--cor-branco);
-            font-size: clamp(1.8em, 5vw, 2.5em);
-            margin: 0 0 20px 0;
-            border-left: 4px solid var(--cor-branco);
-            padding-left: 15px;
-        }
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 2em;
+    }
 
-        .secao-texto p {
-            line-height: 1.8;
-            font-size: clamp(1em, 2vw, 1.1em);
-        }
-        
-        .secao-contato {
-            background: #1a1a1a;
-            padding: clamp(30px, 5vw, 50px);
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 100px;
-        }
-        
-        .secao-contato h2 {
-            color: var(--cor-branco);
-            margin-top: 0;
-            font-family: var(--font-titulo);
-            font-size: clamp(1.6em, 4vw, 2.2em);
-        }
-        
-        .secao-contato p {
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
+    .social-icons a {
+      color: var(--cor-branco);
+      transition: transform 0.3s, color 0.3s;
+    }
 
-        .secao-contato strong {
-            color: var(--cor-cinza-claro);
-        }
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
 
-        .cta a {
-            background: var(--cor-branco);
-            color: #000;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: var(--font-titulo);
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-        }
-
-        .cta a:hover {
-            background: #e0e0e0;
-            color: var(--cor-preto);
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
-        }
-        
-        footer {
-            background-image: linear-gradient(45deg, #1a1a1a 25%, #000 25%, #000 50%, #1a1a1a 50%, #1a1a1a 75%, #000 75%, #000 100%);
-            background-size: 50px 50px;
-            color: #aaa;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9em;
-            border-top: 5px solid var(--cor-branco);
-            margin-top: 60px;
-        }
-        
-        @media (max-width: 768px) {
-            header.hero {
-                min-height: 40vh; 
-                padding: 30px 15px 15px 15px; 
-            }
-            main {
-                padding: 40px 15px;
-                margin-top: -20px;
-            }
-            .secao {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                margin-bottom: 70px;
-            }
-            .secao:nth-child(even) .secao-imagem {
-                order: initial;
-            }
-            .secao-texto {
-                text-align: center;
-            }
-            .secao-texto h2 {
-                border-left: none;
-                border-bottom: 4px solid var(--cor-branco);
-                padding-left: 0;
-                padding-bottom: 15px;
-                display: inline-block;
-            }
-        }
-    </style>
+    .social-icons a[title="TikTok"] { color: #69C9D0; }
+    .social-icons a[title="Facebook"] { color: #1877F2; }
+    .social-icons a[title="Instagram"] { 
+      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .social-icons a[title="Kwai"] { color: #ff6b00; }
+    
+    footer {
+      background-image: linear-gradient(45deg, #1a1a1a 25%, #000 25%, #000 50%, #1a1a1a 50%, #1a1a1a 75%, #000 75%, #000 100%);
+      background-size: 50px 50px;
+      color: #aaa;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      border-top: 5px solid var(--cor-branco);
+      margin-top: 60px;
+    }
+    
+    @media (max-width: 768px) {
+      header.hero {
+        min-height: 40vh; 
+        padding: 30px 15px 15px 15px; 
+      }
+      main {
+        padding: 40px 15px;
+        margin-top: -20px;
+      }
+      .secao {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 70px;
+      }
+      .secao:nth-child(even) .secao-imagem {
+        order: initial;
+      }
+      .secao-texto {
+        text-align: center;
+      }
+      .secao-texto h2 {
+        border-left: none;
+        border-bottom: 4px solid var(--cor-branco);
+        padding-left: 0;
+        padding-bottom: 15px;
+        display: inline-block;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="estrela-solitaria" data-aos="zoom-in" data-aos-duration="1500">★</div>
-        <img src="https://user.uploads.dev/file/156b95d68af4929aad23fd064a51241e.png" alt="Logo Botafoguinho" class="logo" data-aos="fade-down" data-aos-delay="200">
-        <h1 data-aos="fade-up" data-aos-delay="400">Escolinha Botafoguinho</h1>
-    </header>
+  <header class="hero">
+    <div class="estrela-solitaria" data-aos="zoom-in" data-aos-duration="1500">★</div>
+    <img src="https://user.uploads.dev/file/156b95d68af4929aad23fd064a51241e.png" alt="Logo Botafoguinho" class="logo" data-aos="fade-down" data-aos-delay="200">
+    <h1 data-aos="fade-up" data-aos-delay="400">Escolinha Botafoguinho</h1>
+  </header>
 
-    <main>
-        <div class="secao">
-            <div class="secao-texto" data-aos="fade-right">
-                <h2>Nossa Missão</h2>
-                <p>A <strong>Escolinha de Futebol Botafoguinho</strong>, localizada no bairro Jardim Valéria, tem como principal objetivo incentivar crianças e adolescentes da comunidade à prática esportiva, promovendo disciplina, inclusão social e formação cidadã através do futebol.</p>
-            </div>
-            <div class="secao-imagem" data-aos="fade-left">
-                <img src="https://user.uploads.dev/file/1d80fa646d1702a15c9356c3caa0f092.jpg" alt="Time da escolinha em campo">
-            </div>
-        </div>
+  <main>
+    <div class="secao">
+      <div class="secao-texto" data-aos="fade-right">
+        <h2>Nossa Missão</h2>
+        <p>A <strong>Escolinha de Futebol Botafoguinho</strong>, localizada no bairro Jardim Valéria, tem como principal objetivo incentivar crianças e adolescentes da comunidade à prática esportiva, promovendo disciplina, inclusão social e formação cidadã através do futebol.</p>
+      </div>
+      <div class="secao-imagem" data-aos="fade-left">
+        <img src="https://user.uploads.dev/file/1d80fa646d1702a15c9356c3caa0f092.jpg" alt="Time da escolinha em campo">
+      </div>
+    </div>
 
-        <div class="secao">
-            <div class="secao-texto" data-aos="fade-left">
-                <h2>Nosso Desafio</h2>
-                <p>Atualmente, contamos com diversos atletas que treinam regularmente e participam de campeonatos e amistosos. Entretanto, enfrentamos dificuldades financeiras para custear os <strong>uniformes necessários</strong>, essenciais para fortalecer o espírito de equipe e a identidade do grupo em competições.</p>
-            </div>
-            <div class="secao-imagem" data-aos="fade-right">
-                <img src="https://user.uploads.dev/file/5bdbc399aa8827dd48c143510e8d020f.jpg" alt="Time da escolinha reunido">
-            </div>
-        </div>
-        
-        <div class="secao">
-            <div class="secao-texto" data-aos="fade-right">
-                <h2>Seja um Parceiro</h2>
-                <p>Solicitamos o seu apoio com um <strong>patrocínio para a compra de novos uniformes</strong>. Em contrapartida, oferecemos a divulgação da sua marca em nossos uniformes, redes sociais e eventos, fortalecendo a parceria entre esporte e comunidade.</p>
-            </div>
-            <div class="secao-imagem" data-aos="fade-left">
-                <img src="https://user.uploads.dev/file/dedd0221e53f72213c5b2438664ec1ad.jpg" alt="Garotos da escolinha de futebol">
-            </div>
-        </div>
-
-        <div class="secao-contato" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-            <h2>Transforme Vidas Através do Esporte</h2>
-            <p>
-                <strong>Responsável:</strong> Marcos Virgens Santos <br>
-                <strong>Telefone:</strong> <a href="tel:+5577981397397" style="color: inherit;">+55(77) 98139-7397</a>
-            </p>
-            <div class="cta">
-                <a href="https://api.whatsapp.com/send?phone=+55 77 8139-7397&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20como%20patrocinar%20a%20Escolinha%20Botafoguinho." target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.8 0-67.6-9.5-97.8-26.7l-7.1-4.2-73.3 19.3 19.3-71.6-4.7-7.5c-19.1-30.1-29.6-65.7-29.6-102.3 0-110.2 89.9-199.9 200.2-199.9 54.5 0 105.7 21.2 144.1 59.5s59.8 90 59.8 144.4c.1 110.2-89.8 199.8-199.8 199.8zm101.7-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4s-54-29.1-75.5-66c-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-                    Quero Patrocinar
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        © 2025 Escolinha de Futebol Botafoguinho - Todos os direitos reservados
-    </footer>
+    <div class="secao">
+      <div class="secao-texto" data-aos="fade-left">
+        <h2>Nosso Desafio</h2>
+        <p>Atualmente, contamos com diversos atletas que treinam regularmente e participam de campeonatos e amistosos. Entretanto, enfrentamos dificuldades financeiras para custear os <strong>uniformes necessários</strong>, essenciais para fortalecer o espírito de equipe e a identidade do grupo em competições.</p>
+      </div>
+      <div class="secao-imagem" data-aos="fade-right">
+        <img src="https://user.uploads.dev/file/5bdbc399aa8827dd48c143510e8d020f.jpg" alt="Time da escolinha reunido">
+      </div>
+    </div>
     
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 50,
-        });
-    </script>
+    <div class="secao">
+      <div class="secao-texto" data-aos="fade-right">
+        <h2>Seja um Parceiro</h2>
+        <p>Solicitamos o seu apoio com um <strong>patrocínio para a compra de novos uniformes</strong>. Em contrapartida, oferecemos a divulgação da sua marca em nossos uniformes, redes sociais e eventos, fortalecendo a parceria entre esporte e comunidade.</p>
+      </div>
+      <div class="secao-imagem" data-aos="fade-left">
+        <img src="https://user.uploads.dev/file/dedd0221e53f72213c5b2438664ec1ad.jpg" alt="Garotos da escolinha de futebol">
+      </div>
+    </div>
+
+    <div class="secao-contato" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+      <h2>Transforme Vidas Através do Esporte</h2>
+      <p>
+        <strong>Responsável:</strong> Marcos Virgens Santos <br>
+        <strong>Telefone:</strong> <a href="tel:+5577981397397" style="color: inherit;">+55(77) 98139-7397</a>
+      </p>
+      <div class="cta">
+        <a href="https://api.whatsapp.com/send?phone=+55 77 8139-7397&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20como%20patrocinar%20a%20Escolinha%20Botafoguinho." target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Quero Patrocinar
+        </a>
+      </div>
+
+      <!-- Redes sociais -->
+      <h3 style="margin-top:30px; color:white; font-family: var(--font-titulo); font-size:1.4em;">
+        Nossas Redes Sociais
+      </h3>
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/@botafoguinho1" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/marquinhos.marquinhos.3720" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/escolinha_botafoguinho123/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.kwai.com/@marquinhosmarq834" target="_blank" title="Kwai"><i class="fa-solid fa-play"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Escolinha de Futebol Botafoguinho - Todos os direitos reservados
+  </footer>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+    });
+  </script>
 </body>
 </html>
